@@ -4,6 +4,7 @@ import android.app.Application;
 
 import com.facebook.FacebookSdk;
 import com.facebook.appevents.AppEventsLogger;
+import com.google.android.gms.ads.MobileAds;
 
 public class AppController extends Application {
     public static final String TAG = AppController.class.getSimpleName();
@@ -19,5 +20,6 @@ public class AppController extends Application {
         mInstance = this;
         FacebookSdk.sdkInitialize(getApplicationContext());
         AppEventsLogger.activateApp(this);
+        MobileAds.initialize(this, "ca-app-pub-1184842923358046~4069862214");
     }
 }
