@@ -2,9 +2,16 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     tools:context="com.ratings.doctors.ui.activity.MainActivity">
+
+
     <item
-        android:id="@+id/action_logout"
-        android:title="@string/menu_logout"
+        android:id="@+id/action_signin"
+        android:title="@string/btn_signIn"
+        android:visible="true"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_signout"
+        android:title="@string/btn_signout"
         android:visible="true"
         app:showAsAction="never" />
 </menu>

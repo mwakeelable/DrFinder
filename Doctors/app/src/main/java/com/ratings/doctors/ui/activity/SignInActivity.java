@@ -14,6 +14,7 @@ import com.facebook.FacebookCallback;
 import com.facebook.FacebookException;
 import com.facebook.login.LoginManager;
 import com.facebook.login.LoginResult;
+import com.facebook.login.widget.LoginButton;
 import com.google.android.gms.tasks.OnCompleteListener;
 import com.google.android.gms.tasks.Task;
 import com.google.firebase.auth.AuthResult;
@@ -28,7 +29,8 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
         super.onCreate(savedInstanceState);
         Button signInButton = (Button) findViewById(R.id.custom_signin_button);
         Button signUpButton = (Button) findViewById(R.id.custom_signup_button);
-//        LoginButton facebookLoginButton = (LoginButton) findViewById(R.id.facebook_login_button);
+        LoginButton facebookLoginButton = (LoginButton) findViewById(R.id.facebook_login_button);
+        facebookLoginButton.setVisibility(View.GONE);
         emailEditText = (EditText) findViewById(R.id.email_edittext);
         passwordEditText = (EditText) findViewById(R.id.password_edittext);
         callbackManager = CallbackManager.Factory.create();
@@ -37,6 +39,7 @@ public class SignInActivity extends BaseActivity implements View.OnClickListener
                     @Override
                     public void onSuccess(LoginResult loginResult) {
                         // App code
+
                     }
 
                     @Override

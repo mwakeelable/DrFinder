@@ -2,7 +2,6 @@
     <string name="app_name">Doctors</string>
     <string name="action_settings">Settings</string>
     <string name="menu_login">Log in</string>
-    <string name="menu_logout">Log out</string>
     <string name="facebook_app_id">667810803343660</string>
     <string name="fb_login_protocol_scheme">fb667810803343660</string>
     <string name="user_exists">User already logged in</string>
@@ -13,11 +12,14 @@
     <string name="txt_password">Password</string>
     <string name="btn_signIn">Sign In</string>
     <string name="btn_signUp">Sign Up</string>
+    <string name="btn_signout">Sign Out</string>
     <string name="txt_or">OR</string>
     <string name="txt_error">Error</string>
     <string name="signIn_failed_msg">Invalid Email or Password</string>
     <string name="signUp_failed_msg">Sign Up Failed.. Try Again</string>
     <string name="txt_positive_btn">OK</string>
+    <string name="txt_negative_btn">Cancel</string>
     <string name="txt_password_validation">Password can not be left empty!</string>
     <string name="txt_email_validation">Invalid email format!</string>
+    <string name="txt_confirmation">Are you sure?</string>
 </resources>

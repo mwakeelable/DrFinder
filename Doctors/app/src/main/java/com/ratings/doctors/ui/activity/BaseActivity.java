@@ -1,8 +1,10 @@
 package com.ratings.doctors.ui.activity;
 
+import android.app.Activity;
 import android.app.ProgressDialog;
 import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
@@ -12,12 +14,14 @@ import com.google.firebase.auth.FirebaseAuth;
 import com.google.firebase.auth.FirebaseUser;
 import com.google.firebase.database.DatabaseReference;
 import com.google.firebase.database.FirebaseDatabase;
+import com.ratings.doctors.components.SpinnerDialog;
 import com.ratings.doctors.models.User;
 
 public abstract class BaseActivity extends AppCompatActivity {
     private ProgressDialog mProgressDialog;
     public DatabaseReference mDatabase;
     public FirebaseAuth mAuth;
+    public SpinnerDialog mSpinnerDialog;
 
     @Override
     protected void onCreate(@Nullable Bundle savedInstanceState) {
@@ -25,6 +29,7 @@ public abstract class BaseActivity extends AppCompatActivity {
         setContentView(getLayoutResourceId());
         mDatabase = FirebaseDatabase.getInstance().getReference();
         mAuth = FirebaseAuth.getInstance();
+        mSpinnerDialog = new SpinnerDialog(this);
     }
 
     protected abstract int getLayoutResourceId();
@@ -55,7 +60,7 @@ public abstract class BaseActivity extends AppCompatActivity {
     }
 
     public void writeNewUser(String userId, String name, String email) {
-        User user = new User(name, email, 0, 0, 0, "");
+        User user = new User(name, email, 0);
         mDatabase.child("users").child(userId).setValue(user);
     }
 
@@ -82,5 +87,14 @@ public abstract class BaseActivity extends AppCompatActivity {
                 .content(content)
                 .positiveText(positiveText)
                 .show();
+    }
+
+    public static void restartActivity(Activity activity){
+        if (Build.VERSION.SDK_INT >= 11) {
+            activity.recreate();
+        } else {
+            activity.finish();
+            activity.startActivity(activity.getIntent());
+        }
     }
 }
