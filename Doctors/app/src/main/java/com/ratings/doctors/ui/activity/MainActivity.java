@@ -10,7 +10,6 @@ import android.support.v7.widget.Toolbar;
 import android.util.Log;
 import android.view.Menu;
 import android.view.MenuItem;
-
 import com.afollestad.materialdialogs.DialogAction;
 import com.afollestad.materialdialogs.MaterialDialog;
 import com.google.firebase.auth.FirebaseAuth;
@@ -37,12 +36,14 @@ public class MainActivity extends BaseActivity {
         setSupportActionBar(mToolbar);
         mActionBar = getSupportActionBar();
         if (mActionBar != null) {
-            mActionBar.setHomeAsUpIndicator(R.drawable.ic_menu_black_36dp);
+            mActionBar.setHomeAsUpIndicator(R.drawable.ic_menu_white_36dp);
             mActionBar.setDisplayHomeAsUpEnabled(true);
         }
         getSupportActionBar().setDisplayShowTitleEnabled(false);
         if (mAuth.getCurrentUser() != null)
             Log.d(AppController.TAG, getUid());
+        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
     }
 
     @Override

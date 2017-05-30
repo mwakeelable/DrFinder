@@ -41,6 +41,7 @@ dependencies {
     compile 'com.afollestad.material-dialogs:commons:0.8.6.1'
     compile 'com.jakewharton:butterknife:5.1.1'
     compile 'com.heinrichreimersoftware:material-drawer:2.3.2'
+    compile 'com.google.android.gms:play-services-ads:10.2.6'
     testCompile 'junit:junit:4.12'
 }
 
